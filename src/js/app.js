@@ -38,20 +38,36 @@ App = {
         });
     },
 
-    initContract: function() {
-            $.getJSON('DIR_contract.json', function (data) {
-                // Get the necessary contract artifact file and instantiate it with truffle-contract
-                var DIRArtifact = data;
-                App.contracts.DIR_contract = TruffleContract(DIRArtifact);
+    initContract: function () {
+        $.getJSON('DIR_contract.json', function (DIRArtifact) {
+            // Get the necessary contract artifact file and instantiate it with truffle-contract
+            App.contracts.DIR_contract = TruffleContract(DIRArtifact);
 
-                // Set the provider for our contract
-                App.contracts.DIR_contract.setProvider(App.web3Provider);
-                console.log(DIRArtifact)
-                // Use our contract to retrieve and mark the adopted pets
-                // return App.markAdopted();
-            });
-            // return App.bindEvents();
-        }
+            // Set the provider for our contract
+            App.contracts.DIR_contract.setProvider(App.web3Provider);
+            console.log(DIRArtifact);
+
+            // App.listenToEvents();
+            // Use our contract to retrieve and mark the adopted pets
+            // return App.markAdopted();
+            return App.reloadReports();
+        });
+    },
+
+    reloadReports: function () {
+
+        App.displayAccountInfo();
+
+        App.contracts.DIR_contract.deployed().then(function (instance) {
+            return instance.getReport.call();
+        }).then(function (report) {
+            if(report[0]== 0x0){
+                return;
+            }
+            console.log(report[0]);
+        })
+    }
+
 
 };
 
