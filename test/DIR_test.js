@@ -1,9 +1,9 @@
-var DIR_contratct = artifacts.require("./DIR_contract.sol");
+var DIR_contract = artifacts.require("./DIR_contract.sol");
 
 contract('DIR_contract',function (accounts) {
 
     it("contract intilaised",function(){
-        var dir =  DIR_contratct.deployed();
+        var dir =  DIR_contract.deployed();
         return dir.getUserReportByIndex.Call(accounts[0]).then(function (data) {
             assert.equal(data[0],0x0, "User Address must be empty");
             assert.equal(data[1],'', "User Name must be empty");
