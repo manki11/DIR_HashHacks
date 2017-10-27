@@ -47,7 +47,7 @@ App = {
             App.contracts.DIR_contract.setProvider(App.web3Provider);
             console.log(DIRArtifact);
 
-            // App.listenToEvents();
+            App.listenToEvents();
             // Use our contract to retrieve and mark the adopted pets
             // return App.markAdopted();
             return App.reloadReports();
@@ -64,7 +64,68 @@ App = {
             if(report[0]== 0x0){
                 return;
             }
+
+            var reportRow= $('#reportRow');
+            console.log("i am empty");
+            
+            reportRow.empty();
+            
             console.log(report[0]);
+            var reportTemplate= $('#listing-template');
+            reportTemplate.find('.case_name').text(report[1]);
+            reportTemplate.find('.case_desc').text(report[3]);
+            reportTemplate.find('.case_report_type').text(report[2]);
+
+            console.log("i am append");
+            
+
+            reportRow.append(reportTemplate.html());
+            
+        }).catch(function(err) {
+            console.log(err.message);
+        });
+    },
+
+    createReport: function() {
+        console.log("in create report!");
+
+        // retrieve details of the article
+        var _reporter_name = $("#report-name").val();
+        var _desc = $("#report-desc").val();
+        var _report_type = $("#report-type").val();
+
+        console.log(_reporter_name);
+        console.log(_report_type);
+        console.log(_desc);
+
+
+        if ((_reporter_name.trim() == '') || (_desc.trim() =='')) {
+            // nothing to sell
+            return false;
+        }
+
+        App.contracts.DIR_contract.deployed().then(function(instance) {
+            return instance.createReport(_reporter_name, _report_type, _desc, {
+                from: App.account,
+                gas: 500000
+            });
+        }).then(function(result) {
+            console.log(result);
+            App.reloadReports();
+        }).catch(function(err) {
+            console.error(err);
+        });
+    },
+
+    listenToEvents: function () {
+        App.contracts.DIR_contract.deployed().then(function (instance) {
+            instance.createReportEvent({},{
+                fromBlock: 0,
+                toBlock: 'latest'
+            }).watch(function (err, event) {
+                // $("#events").append('<li class="list-group-item">'+ event.args._name+' is for sale'+'</li>');
+                App.reloadReports();
+            })
         })
     }
 
