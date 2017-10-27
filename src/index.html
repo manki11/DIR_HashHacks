@@ -20,7 +20,7 @@
   <body>
   <nav class="navbar navbar-default" id="nav" style="margin-bottom: 0px;">
     <div class="container">
-      <h1>DIR</h1>
+      <h1>FIRChain</h1>
     </div>
   </nav>
   <div class="container" style="margin-top: 30px">
@@ -45,17 +45,35 @@
       </div>
     </div>
 
-    <div class="well" id="listing-template" style="display: none">
-      <p><strong>Report</strong></p>
-      <p style="word-break: break-all" id="template-heading">
-        DESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaaDESCaa</p>
-      <div>
-        <span class="label label-success" id="template-created">Created</span>
-        <span class="label label-danger" id="template-approved">Approved</span>
-        <span class="label label-danger" id="template-investigated">Investigated</span>
-        <span class="label label-danger" id="template-announced">Verdict Announced</span>
+      <div class="well col-xs-12 col-sm-8 col-sm-push-2" id="listing-template" >
+          <p><strong>Report</strong></p>
+          <div>
+              <div class="row">
+                  <div class="col-xs-2">Name</div>
+                  <div class="col-xs-1">-  </div>
+                  <div class="col-xs-9" id="case_name">Rishab Lamba</div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-xs-2">Report Type</div>
+                  <div class="col-xs-1">-  </div>
+                  <div class="col-xs-9" id="case_report_type">Molestation</div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-xs-2">Description</div>
+                  <div class="col-xs-1">-  </div>
+                  <div class="col-xs-9" id="case_desc">Victim was sexually harassed while writing a code for Hello world</div>
+              </div>
+              <br>
+          </div>
+          <div>
+              <span class="label label-success" id="template-created">Created</span>
+              <span class="label label-danger" id="template-approved">Approved</span>
+              <span class="label label-danger" id="template-investigated">Investigated</span>
+              <span class="label label-danger" id="template-announced">Verdict Announced</span>
+          </div>
       </div>
-    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -65,13 +83,5 @@
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
   </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
   </body>
 </html>
