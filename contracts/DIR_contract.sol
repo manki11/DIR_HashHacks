@@ -28,4 +28,9 @@ contract DIR_contract{
         reports[curr].report_type = report_type;
         curr++;
     }
+
+    function getUserReportByIndex(uint _index) constant returns(address reporter,string name,string report_type,string desc,address officer,uint report_status,address investigator,string investigation,string verdict,address jury){
+        Report storage mReport= reports[_index];
+        return (mReport.reporter,mReport.name,mReport.report_type,mReport.desc,mReport.officer,mReport.report_status,mReport.investigator,mReport.investigation,mReport.verdict,mReport.jury);
+    }
 }
