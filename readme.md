@@ -32,7 +32,7 @@ npm install -g truffle
 Run test-rpc
 
 ```bash
-testrpc
+./starttestrpc.sh
 ```
 
 Compile project
