@@ -1,0 +1,6 @@
+Progress so far (2 AM):
+
+1) Smart Contract created for DIR
+2) UI of all four consoles created
+3) Ethereum account linked with js using Web3
+
