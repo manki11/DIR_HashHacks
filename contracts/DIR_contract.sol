@@ -33,4 +33,16 @@ contract DIR_contract{
         Report storage mReport= reports[_index];
         return (mReport.reporter,mReport.name,mReport.report_type,mReport.desc,mReport.officer,mReport.report_status,mReport.investigator,mReport.investigation,mReport.verdict,mReport.jury);
     }
+
+    function getUserReportsIndexes(address _user) constant returns(uint[] mreport){
+        uint[] memory data = new uint[](15);
+        uint last = 0;
+        for(uint i;i < reports.length;i++){
+            if(reports[i].reporter == _user){
+                data[last] = i;
+                last++;
+            }
+        }
+        return data;
+    }
 }
