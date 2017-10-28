@@ -6,6 +6,16 @@ A decentralized investigation report for people to report crimes to police in re
 
 The Dapp will have 4 consoles. One each for the user, police, investigators, and the judge. Once the user submits a DIR , it will be appended into the blockchain and can't be tampered with or removed after that.
 
+#### Project ScreenShots
+
+![Alt text](images/user.jpeg?raw=true)
+
+![Alt text](images/police.png?raw=true)
+
+![Alt text](images/investigation.png?raw=true)
+
+![Alt text](images/Court.png?raw=true)
+
 
 #### Steps to run project ####
 

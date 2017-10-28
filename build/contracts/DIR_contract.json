@@ -144,8 +144,42 @@
       "links": {},
       "address": "0xfb0a4e5bbc481ae30826742c325ac26442cf0253",
       "updated_at": 1509152424380
+    },
+    "1509157394205": {
+      "events": {
+        "0x36e8452b5b1e677577e49e4d6864494d0bed23f134aab184e1e035a16f2db5d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_reporter",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "_report_type",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "_desc",
+              "type": "string"
+            }
+          ],
+          "name": "createReportEvent",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xe7194e2016d5454d5791d94d8a6aff6c1ead6457",
+      "updated_at": 1509157646456
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1509152424380
+  "updated_at": 1509157646456
 }
