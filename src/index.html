@@ -6,17 +6,19 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        .container{
+        .container {
             align-content: center;
             text-align: center;
         }
-        .link{
+
+        .link {
             width: 300px;
             padding: 30px;
             display: block;
             margin: 50px auto;
         }
-        p{
+
+        p {
             margin-bottom: 20px;
         }
     </style>
@@ -29,11 +31,20 @@
     </div>
 </nav>
 
+<div class="container">
+        <div class="col-lg-12">
+            <p id="account" class="welcome pull-right"></p>
+            <p id="accountBalance" class="welcome pull-left"></p>
+        </div>
+</div>
+
 <div class="container" style="margin-top: 50px">
     <p style="color: red" id="error"></p>
     <button onclick="App.checkConsole(0)" id="user_button" class="btn btn-default btn-large link">Users</button>
     <button onclick="App.checkConsole(1)" id="police_button" class="btn btn-default btn-large link">Police</button>
-    <button onclick="App.checkConsole(2)" id="investigation_button" class="btn btn-default btn-large link">Investigator</button>
+    <button onclick="App.checkConsole(2)" id="investigation_button" class="btn btn-default btn-large link">
+        Investigator
+    </button>
     <button onclick="App.checkConsole(3)" id="jury_button" class="btn btn-default btn-large link">Jury</button>
 </div>
 
