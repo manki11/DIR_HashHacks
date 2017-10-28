@@ -28,7 +28,16 @@ App = {
                 App.account = account;
                 $("#account").html("<strong>Account:</strong> "+account);
                 console.log(account);
+                if(account === "0x00d1ae0a6fc13b9ecdefa118b94cf95ac16d4ab0"){
+                    $("#permision").html("<strong>Permision: User</strong> ");
 
+                }else if(App.account === "0x1daa654cfbc28f375e0f08f329de219fff50c765" ){
+                    $("#permision").html("<strong>Permision: Police</strong> ");
+
+                }else if(App.account === "0xc2dbc0a6b68d6148d80273ce4d6667477dbf2aa7"){
+                    $("#permision").html("<strong>Permision: Investigator</strong> ");
+
+                }
                 web3.eth.getBalance(account, function (err, balance) {
                     if (err === null) {
                         $("#accountBalance").html("<strong>Balance:</strong> "+web3.fromWei(balance, "ether") + " ETH");
