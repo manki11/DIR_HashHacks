@@ -38,6 +38,26 @@ App = {
         });
     },
 
+    checkConsole: function (id) {
+        console.log("i am here in console:"+ App.account);
+        
+        if(App.account === "0x00d1ae0a6fc13b9ecdefa118b94cf95ac16d4ab0" && id==0){
+            console.log("user");
+            window.location.href = "/user.html";
+        }else if(App.account === "0x1daa654cfbc28f375e0f08f329de219fff50c765" && id==1){
+            console.log("police");
+            window.location.href = "/police.html";
+        }else if(App.account === "0xc2dbc0a6b68d6148d80273ce4d6667477dbf2aa7" && id==2){
+            console.log("Investigator");
+            window.location.href = "/investigator.html";
+        }else if(id == 3){
+            console.log("Jury");
+            window.location.href = "/court.html";
+        }else{
+            $("#error").text("You dont have permission to view that console");
+        }
+    },
+
     initContract: function () {
         $.getJSON('DIR_contract.json', function (DIRArtifact) {
             // Get the necessary contract artifact file and instantiate it with truffle-contract

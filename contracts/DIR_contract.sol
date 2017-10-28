@@ -2,6 +2,7 @@ pragma solidity ^0.4.11;
 
 
 contract DIR_contract{
+
         address     reporter;
         string      name;
         string      report_type;
