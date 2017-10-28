@@ -59,23 +59,23 @@ App = {
 
         App.displayAccountInfo();
 
-        App.contracts.DIR_contract.deployed().then(function (instance) {
-            instance.createReportEvent({},{
-                fromBlock: 0,
-                toBlock: 'latest'
-            }).watch(function (err, event) {
-                console.log(event.args);
-                var newDiv= $("#event").clone();
-                newDiv.find('.case_name').html(event.args._name);
-                newDiv.find('.case_report_type').html(event.args._report_type);
-                newDiv.find('.case_desc').html(event.args._desc);
-
-                $(newDiv).css('display','block');
-
-                $("#events").append(newDiv);
-                // App.reloadReports();
-            })
-        })
+        // App.contracts.DIR_contract.deployed().then(function (instance) {
+        //     instance.createReportEvent({},{
+        //         fromBlock: 0,
+        //         toBlock: 'latest'
+        //     }).watch(function (err, event) {
+        //         console.log(event.args);
+        //         var newDiv= $("#event").clone();
+        //         newDiv.find('.case_name').html(event.args._name);
+        //         newDiv.find('.case_report_type').html(event.args._report_type);
+        //         newDiv.find('.case_desc').html(event.args._desc);
+        //
+        //         $(newDiv).css('display','block');
+        //
+        //         $("#events").append(newDiv);
+        //         // App.reloadReports();
+        //     })
+        // })
     },
 
     createReport: function() {
@@ -133,15 +133,19 @@ $(function () {
         App.init();
     });
 
-    $("#events").on('click',".approve", function (event) {
-        var parent=$(this).parent();
-        var decline= parent.find(".decline").hide();
-        $(this).text('Approved');
-    })
+    // $("#events").on('click',".approve", function (event) {
+    //     var parent=$(this).parent();
+    //     var decline= parent.find(".decline").hide();
+    //     $(this).text('Approved');
+    // })
+    //
+    // $("#events").on('click',".decline", function (event) {
+    //     var parent=$(this).parent();
+    //     var approve= parent.find(".approve").hide();
+    //     $(this).text('Declined');
+    // })
 
-    $("#events").on('click',".decline", function (event) {
-        var parent=$(this).parent();
-        var approve= parent.find(".approve").hide();
-        $(this).text('Declined');
+    $("#Submit").on('click', function (event) {
+        $(this).text("Submitted");
     })
 });
