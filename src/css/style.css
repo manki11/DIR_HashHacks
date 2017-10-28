@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#inner_container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.clearfix2 {
+    clear: both;
+}
+
+.hidden2 {
+    display: none;
+}
+
+@media (max-width: 300px) {
+    #photo-container,
+    #photo {
+        height: 40px;
+        width: 40px;
+    }
+}
